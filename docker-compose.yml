@@ -21,3 +21,12 @@ services:
       - db
     env_file:
       - ./.env
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    volumes:
+      - .:/app
+    depends_on:
+      - web
